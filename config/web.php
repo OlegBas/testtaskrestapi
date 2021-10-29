@@ -1,4 +1,12 @@
 <?php
+
+use yii\rest\UrlRule;
+use yii\web\JsonParser;
+
+use yii\web\Request;
+use yii\web\Response;
+
+
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
@@ -13,7 +21,15 @@ $config = [
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
+            'class' => Request::class,
+
             'cookieValidationKey' => 'iw6sn3iP3QUKkcC1zsQfr67Df7oHnbOd',
+            'parsers' => [
+                'application/json'  => JsonParser::class,
+            ],
+            'acceptableContentTypes' => [
+                'application/json'  => 1
+            ]
         ],
 
         'cache' => [
@@ -27,6 +43,15 @@ $config = [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'response' => [
+            'class' => Response::class,
+            'format' => Response::FORMAT_JSON,
+            'formatters' => [
+                Response::FORMAT_JSON => [
+                    'class' => 'yii\web\JsonResponseFormatter',
+                ]
+            ]
+                ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             // send all mails to a file by default. You have to set
