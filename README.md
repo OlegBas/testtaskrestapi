@@ -29,7 +29,7 @@ DIRECTORY STRUCTURE
       runtime/            contains files generated during runtime
       tests/              contains various tests for the basic application
       vendor/             contains dependent 3rd-party packages
-      views/              contains view files for the Web application
+      /              contains view files for the Web application
       web/                contains the entry script and Web resources
 
 
