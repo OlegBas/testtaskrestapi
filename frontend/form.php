@@ -1,5 +1,5 @@
 <?php if(!empty($validator->errors)){?>
-    <div class="alert alert-danger">
+    <div class="alert alert-da">
         <?php for($i = 0;$i < count($validator->errors);$i++){?>
             <?=$validator->errors[$i]?><br>
         <?php }?>

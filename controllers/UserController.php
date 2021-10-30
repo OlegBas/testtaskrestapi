@@ -1,6 +1,6 @@
 <?php
 namespace app\controllers;
-
+use app\models\User;
 use yii\rest\ActiveController;
 
 class UserController extends ActiveController
@@ -9,6 +9,7 @@ class UserController extends ActiveController
 
 
     public function actionSearch($field,$value){
-        return "$field /  $value";
+        $model = new User();
+        return json_encode($model->search($field,$value));
     }
 }

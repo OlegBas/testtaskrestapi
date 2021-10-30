@@ -2,6 +2,7 @@
 </footer>
 
 <script src="/frontend/template/js/jquery.js"></script>
+<script src="/frontend/template/js/main.js"></script>
 <script src="/frontend/template/js/bootstrap.min.js"></script>
 
 </body>

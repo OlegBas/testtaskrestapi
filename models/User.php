@@ -62,4 +62,8 @@ class User extends ActiveRecord
     {
         $this->accessToken = md5(date('c'));
     }
+
+    public  function search($field,$value){
+        return User::find()->where(['like',$field,$value])->asArray()->all();
+    }
 }
