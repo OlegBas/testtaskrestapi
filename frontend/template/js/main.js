@@ -17,7 +17,6 @@ $(".user-search").on("input",function () {
                $(row).appendTo("#users tbody");
            }
 
-
         })
         .fail(function() {
             alert( "error" );
