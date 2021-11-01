@@ -19,14 +19,14 @@ class Validator
 
     function validate()
     {
-        if (strlen($this->safe_data["username"]) < 5) {
-            array_push($this->errors, "username min length 5");
+        if (mb_strlen($this->safe_data["username"]) < 5) {
+            array_push($this->errors, "username min length 5!");
         }
-        if (strlen($this->safe_data["username"]) > 10) {
-            array_push($this->errors, "username max length 10");
+        if (mb_strlen($this->safe_data["username"]) > 10) {
+            array_push($this->errors, "username max length 10!");
         }
         if (!preg_match("/^(?:[a-z0-9]+(?:[-_.]?[a-z0-9]+)?@[a-z0-9_.-]+(?:\.?[a-z0-9]+)?\.[a-z]{2,5})$/i", $this->safe_data["email"])) {
-            array_push($this->errors, "email isn`t corected");
+            array_push($this->errors, "email isn`t corrected!");
         }
         return empty($this->errors);
     }
